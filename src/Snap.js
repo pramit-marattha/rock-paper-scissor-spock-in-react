@@ -59,28 +59,31 @@ const Snap = () => {
   return (
     <>
       <h1>Rock Paper Scissors lizard Spock</h1>
-      <h2>{result} </h2>
-      <div className="container">
-        <div className="section">
-          <div className="info">
-            <h3>You</h3>
+      <div>
+        <div className="container">
+          <div className="section">
+            <div className="info">
+              <h3>You</h3>
+            </div>
+            <div className="show">{userChoice}</div>
           </div>
-          <div className="show">{userChoice}</div>
-        </div>
 
-        <div className="section">
-          <div className="info">
-            <h3>Computer</h3>
+          <div className="section">
+            <div className="info">
+              <h3>Computer</h3>
+            </div>
+            <div className="show computer">{computerChoice}</div>
           </div>
-          <div className="show computer">{computerChoice}</div>
         </div>
-      </div>
-      <div className="attack-btn">
-        {selection.map((choice, index) => (
-          <button key={index} onClick={() => handleClick(choice)}>
-            <div className="emojiSize">{choice}</div>
-          </button>
-        ))}
+        <h2>{result} </h2>
+
+        <div className="attack-btn">
+          {selection.map((choice, index) => (
+            <button key={index} onClick={() => handleClick(choice)}>
+              <div className="emojiSize">{choice}</div>
+            </button>
+          ))}
+        </div>
       </div>
     </>
   );
